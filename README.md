@@ -3,8 +3,10 @@
   
  <!-- Project Showcase Image -->
   <a href="https://scrgaming.vercel.app/" target="_blank">
-    <img src="https://github.com/user-attachments/assets/e0dd2828-2412-4e8e-a534-39807f3d1dd7" 
-         alt="Project Screenshot" width="800">
+   <img src="https://github.com/user-attachments/assets/22842cc1-e088-4a25-ad48-5f467b7aeec9" 
+     alt="Project Screenshot" width="800">
+
+
   </a>
   
   <br />
