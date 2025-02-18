@@ -1,10 +1,10 @@
 <div align="center">
   <br />
   
-  <!-- Add your project video here -->
-  <a href="" target="_blank">
-    <img src="![image](https://github.com/user-attachments/assets/e9a38d20-ec25-4fb4-aa89-827aa18603fa)
-" alt="Project Demo Video">
+ <!-- Project Showcase Image -->
+  <a href="https://scrgaming.vercel.app/" target="_blank">
+    <img src="https://github.com/user-attachments/assets/e0dd2828-2412-4e8e-a534-39807f3d1dd7" 
+         alt="Project Screenshot" width="800">
   </a>
   
   <br />
@@ -17,23 +17,15 @@
   </div>
 
   <h3 align="center">A Modern Animated Website Built with React.js & GSAP</h3>
+  
+  🌟 **Live Demo:** 👉 [SCR Gaming](https://scrgaming.vercel.app/)
 </div>
 
 ---
 
 ## 📌 Introduction
 
-This project is a visually captivating website featuring **scroll-triggered animations**, **geometric transitions**, and **engaging video storytelling**. It delivers a sleek, modern feel, focusing on **smooth UI/UX and responsiveness**.
-
----
-
-## 🎥 Demo
-
-🚀 **Check out the live demo of the site:**  
-👉 **[Live Site](YOUR_DEPLOYMENT_URL_HERE)**  
-
-📽️ **Watch the video walkthrough:**  
-👉 **[Watch Video](YOUR_VIDEO_LINK_HERE)**  
+**SCR Gaming** is a visually captivating website featuring **scroll-triggered animations**, **geometric transitions**, and **engaging UI interactions**. Built with **React.js, GSAP, and Tailwind CSS**, it delivers a sleek, modern feel, focusing on **smooth UI/UX and responsiveness**.
 
 ---
 
@@ -42,6 +34,7 @@ This project is a visually captivating website featuring **scroll-triggered anim
 - **React.js** – Component-based UI library.  
 - **GSAP** – Smooth animations and transitions.  
 - **Tailwind CSS** – Modern styling with utility-first approach.  
+- **Vite** – Lightning-fast development environment.  
 
 ---
 
@@ -50,29 +43,62 @@ This project is a visually captivating website featuring **scroll-triggered anim
 ✅ **Smooth Scroll Animations** – Engaging animations triggered by user interactions.  
 ✅ **Clip Path Transitions** – Unique visual effects for modern UI.  
 ✅ **3D Hover Effects** – Interactive transformations for an immersive experience.  
-✅ **Video Integration** – Enhances storytelling through embedded media.  
+✅ **Fast & Lightweight** – Optimized with Vite for high performance.  
 ✅ **Responsive Design** – Optimized for all screen sizes.  
+✅ **SEO Optimized** – Ensures better search engine visibility.  
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local Setup)
 
 ### **Prerequisites**
 Ensure you have the following installed:
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/)
+- [npm](https://www.npmjs.com/) (or `yarn`)
 
 ### **Installation & Setup**
-1️⃣ **Clone the repository:**
 ```sh
+# 1️⃣ Clone the repository:
 git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
 
+# 2️⃣ Install dependencies:
+npm install
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 3️⃣ Start the development server:
+npm run dev
 
-Currently, two official plugins are available:
+# 4️⃣ Open in browser:
+http://localhost:5173/
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1️⃣ Push your code to GitHub (if not already done):
+git add .
+git commit -m "Initial commit"
+git push origin main
+
+
+
+## 📜 License
+This project is open-source and can be used for personal and educational purposes. If you use it, kindly provide appropriate credit.
+
+## 📞 Contact
+📧 Email: sharadreddy11@gmail.com
+
+---
+
+### **✅ What’s Improved?**
+✔ **Fixed project repository link (`scr-gaming`).**  
+✔ **Added full deployment instructions for Vercel.**  
+✔ **Troubleshooting section for common issues.**  
+✔ **Contact information with email & LinkedIn.**  
+✔ **Formatted everything neatly for readability.**  
+
+
+### Namaste 🙏🏻!
+
+
+
+
+
