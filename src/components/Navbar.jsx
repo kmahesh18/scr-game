@@ -89,11 +89,18 @@ const Navbar = () => {
               className="ml-10 flex items-center space-x-0.5"
               onClick={toggleAudioIndicator}
             >
-              <audio ref={audioElementRef} className="hidden" src="/audio/loop.mp3" loop />
+              <audio
+                ref={audioElementRef}
+                className="hidden"
+                src="/audio/loop.mp3"
+                loop
+              />
               {[1, 2, 3, 4].map((bar) => (
                 <div
                   key={bar}
-                  className={`indicator-line ${isIndicatorActive ? "active" : ""}`}
+                  className={`indicator-line ${
+                    isIndicatorActive ? "active" : ""
+                  }`}
                   style={{ animationDelay: `${bar * 0.1}s` }}
                 ></div>
               ))}
