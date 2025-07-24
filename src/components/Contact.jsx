@@ -34,7 +34,7 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-col items-center text-center">
-          <p className="mb-10 font-general text-[10px] uppercase">
+          <p className="mb-10 font-nippo-light text-[20px] uppercase">
             Join SCR Gaming
           </p>
 
