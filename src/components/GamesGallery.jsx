@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { TiLocationArrow } from "react-icons/ti";
 import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
+import { BentoTilt } from "./Features";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,12 +79,30 @@ export const GameCard = ({
 
   return (
     <div className="relative size-full group">
-      {/* Game Cover Image */}
+      {/* Game Cover Image - Enhanced Quality */}
       <div className="absolute inset-0 overflow-hidden rounded-xl">
         <img
           src={image}
           alt={title}
+          loading={isHero ? "eager" : "lazy"}
+          decoding="async"
           className="size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          style={{
+            imageRendering: 'high-quality',
+            backfaceVisibility: 'hidden',
+            transform: 'translateZ(0) scale(1.001)',
+            filter: 'contrast(1.15) saturate(1.2) brightness(1.08)',
+            willChange: 'transform',
+          }}
+          onLoad={(e) => {
+            // Apply final enhancements after image loads
+            e.target.style.filter = 'contrast(1.2) saturate(1.25) brightness(1.1) unsharp-mask(amount=0.5, radius=0.5, threshold=0)';
+            e.target.style.imageRendering = '-webkit-optimize-contrast';
+          }}
+          onError={(e) => {
+            // Fallback for broken images
+            e.target.style.backgroundColor = '#1f2937';
+          }}
         />
         {/* Overlay gradient for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -119,21 +138,21 @@ export const GameCard = ({
             </p>
           )}
 
-          {/* Action Button */}
+          {/* Action Button - Yellow Play Now Button */}
           {isPlayable && (
             <div
               ref={hoverButtonRef}
               onMouseMove={handleMouseMove}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="border-hsla relative flex w-fit cursor-pointer items-center gap-2 overflow-hidden rounded-full bg-blue-300/90 px-5 py-2.5 text-sm uppercase text-black font-bold backdrop-blur-sm transition-all duration-300 hover:bg-blue-300"
+              className="border-hsla relative flex w-fit cursor-pointer items-center gap-2 overflow-hidden rounded-full bg-yellow-300 px-5 py-2.5 text-sm uppercase text-black font-bold backdrop-blur-sm transition-all duration-300 hover:bg-yellow-400"
             >
               {/* Radial gradient hover effect */}
               <div
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
                 style={{
                   opacity: hoverOpacity,
-                  background: `radial-gradient(120px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #EDFF66, #4FB7DD)`,
+                  background: `radial-gradient(120px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #FBBF24, #F59E0B)`,
                 }}
               />
               <TiLocationArrow className="relative z-20" />
@@ -169,7 +188,7 @@ export const GameCard = ({
 
 // Main Games Gallery Component
 const GamesGallery = () => {
-  // Sample game data - you can replace with real data
+  // Sample game data - using your original images
   const gamesData = [
     {
       id: 1,
@@ -283,15 +302,18 @@ const GamesGallery = () => {
   });
 
   return (
-    <section id="games-gallery" className="bg-blue-75 py-20 md:py-32">
+    <section id="games-gallery" className="bg-blue-75 py-20 md:pt-32">
       <div className="container mx-auto px-5 md:px-10">
-        {/* Header Section */}
+        {/* Header Section - Improved heading style matching the reference */}
         <div className="text-center mb-16">
-          <div className="games-gallery-title">
-            <AnimatedTitle
-              title="Featured <b>G</b>ames <br /> Collecti<b>o</b>n"
-              containerClass="!text-black mb-8"
-            />
+          <div className="games-gallery-title mb-8">
+           <h2 className="font-nippo-light text-lg uppercase md:text-[25px]">
+          G∀ME ON
+        </h2>
+        <AnimatedTitle
+          title=" Fe<b>at</b>ured Ga<b>m</b>es <br /> Colle<b>c</b>tion"
+          containerClass="mt-5 !text-black text-center"
+        />
           </div>
           
           <p className="games-gallery-subtitle font-nippo-light text-lg md:text-xl text-black/70 max-w-2xl mx-auto">
@@ -301,43 +323,43 @@ const GamesGallery = () => {
         </div>
 
         {/* Games Grid - Bento-style layout like Features section */}
-        <div className="games-section mb-12">
-          {/* Hero Game Card - Full width like Features */}
-          <GameTilt className="game-card border-hsla relative mb-7 h-[60vh] w-full overflow-hidden rounded-xl md:h-[65vh]">
-            <GameCard {...gamesData[0]} isHero={true} />
-          </GameTilt>
+        <div className="games-section">
+          {/* Unified Grid with all cards including hero */}
+          <div className="grid h-[180vh] w-full grid-cols-2 grid-rows-6 gap-7 md:grid-cols-3 md:grid-rows-4">
+            {/* Hero Game Card - spans 2 columns on mobile, 2 on desktop */}
+            <GameTilt className="game-card border-hsla bento-tilt_1 col-span-2 row-span-2 overflow-hidden rounded-md md:col-span-2 md:row-span-1">
+              <GameCard {...gamesData[0]} isHero={true} />
+            </GameTilt>
 
-          {/* Grid of smaller cards */}
-          <div className="grid h-[120vh] w-full grid-cols-2 grid-rows-3 gap-7">
-            <GameTilt className="game-card border-hsla relative col-span-2 row-span-1 overflow-hidden rounded-xl md:col-span-1 md:row-span-2">
+            <GameTilt className="game-card border-hsla bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2 overflow-hidden rounded-md">
               <GameCard {...gamesData[1]} />
             </GameTilt>
 
-            <GameTilt className="game-card border-hsla relative col-span-1 row-span-1 ms-8 overflow-hidden rounded-xl md:col-span-1 md:ms-0">
+            <GameTilt className="game-card border-hsla bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0 overflow-hidden rounded-md">
               <GameCard {...gamesData[2]} />
             </GameTilt>
 
-            <GameTilt className="game-card border-hsla relative col-span-1 row-span-1 me-8 overflow-hidden rounded-xl md:col-span-1 md:me-0">
+            <GameTilt className="game-card border-hsla bento-tilt_1 me-14 md:col-span-1 md:me-0 overflow-hidden rounded-md">
               <GameCard {...gamesData[3]} />
             </GameTilt>
 
-            <GameTilt className="game-card border-hsla relative col-span-1 row-span-1 overflow-hidden rounded-xl">
+            <GameTilt className="game-card border-hsla bento-tilt_2 row-span-1 md:col-span-1 overflow-hidden rounded-md">
               <GameCard {...gamesData[4]} />
             </GameTilt>
 
-            <GameTilt className="game-card border-hsla relative col-span-1 row-span-1 overflow-hidden rounded-xl">
+            <GameTilt className="game-card border-hsla bento-tilt_2 row-span-1 md:col-span-1 overflow-hidden rounded-md">
               <GameCard {...gamesData[5]} />
             </GameTilt>
-          </div>
-        </div>
 
-        {/* Action Button */}
-        <div className="games-action-btn text-center">
-          <Button
-            title="Explore All Games"
-            leftIcon={<TiLocationArrow />}
-            containerClass="bg-violet-300 text-white hover:bg-violet-300/90 transition-colors duration-300"
-          />
+            <BentoTilt className="bento-tilt_1 col-span-2 row-span-1 md:col-span-1">
+              <div className="flex size-full flex-col justify-between bg-gradient-to-br from-black to-violet-300 p-5">
+                <h1 className="bento-title special-font max-w-64 text-blue-75">
+                  N<b>e</b>w ga<b>m</b>es co<b>m</b>ing s<b>o</b>on!
+                </h1>
+                <TiLocationArrow className="m-5 scale-[5] self-end text-blue-75" />
+              </div>
+            </BentoTilt>
+          </div>
         </div>
       </div>
     </section>
