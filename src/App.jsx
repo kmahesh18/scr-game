@@ -7,6 +7,7 @@ import Story from './components/Story'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CursorTrail from "./components/CursorTrail/CursorTrail";
+import GamesGallery from './components/GamesGallery'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
    <Navbar/>
     <About/>
     <Features/>
+    <GamesGallery/>
     <Story/>
     <Contact/>
     <Footer/>
