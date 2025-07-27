@@ -302,7 +302,7 @@ const GamesGallery = () => {
   });
 
   return (
-    <section id="games-gallery" className="bg-blue-75 py-20 md:pt-32">
+    <section id="games-gallery" className="bg-blue-75 py-20 md:py-42">
       <div className="container mx-auto px-5 md:px-10">
         {/* Header Section - Improved heading style matching the reference */}
         <div className="text-center mb-16">
@@ -325,7 +325,7 @@ const GamesGallery = () => {
         {/* Games Grid - Bento-style layout like Features section */}
         <div className="games-section">
           {/* Unified Grid with all cards including hero */}
-          <div className="grid h-[180vh] w-full grid-cols-2 grid-rows-6 gap-7 md:grid-cols-3 md:grid-rows-4">
+          <div className="grid min-h-[90vh] w-full grid-cols-2 grid-rows-5 gap-5 md:grid-cols-3 md:grid-rows-3">
             {/* Hero Game Card - spans 2 columns on mobile, 2 on desktop */}
             <GameTilt className="game-card border-hsla bento-tilt_1 col-span-2 row-span-2 overflow-hidden rounded-md md:col-span-2 md:row-span-1">
               <GameCard {...gamesData[0]} isHero={true} />
